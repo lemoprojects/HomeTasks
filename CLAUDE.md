@@ -90,18 +90,17 @@ Claude must ask for permission before pushing any changes to the server.
 
 ### Commit Descriptions
 
-Every commit must include a detailed description that explains:
+Every commit must include a brief description that explains:
 
-- **What changed**: What files/components were modified
-- **Why it changed**: Business or technical reason for the change
-- **How it changed**: Brief summary of the implementation approach
-- **Impact**: Any side effects or dependencies to consider
+- **What**: What files/components were modified
+- **Why**: The reason for the change
+- **Impact**: Any important side effects
 
-Commit descriptions should be created automatically by Claude without requiring user input for each commit. Descriptions should be:
-- clear and concise
+Commit descriptions should be created automatically by Claude without requiring user input for each commit. Keep descriptions:
+- concise (5-10 lines maximum)
 - written in a professional tone
 - in the same language as project documentation
-- traceable to requirements or discussions
+- traceable to requirements
 
 ### Pushing to Server
 
