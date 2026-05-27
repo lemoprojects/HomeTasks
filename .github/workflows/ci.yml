@@ -1,45 +1,58 @@
-name: CI
+# CI/CD pipeline - disabled until codebase is ready
+# TODO: Re-enable and configure when CI/CD stack is decided
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: CI (disabled)
+on: workflow_dispatch
 
 jobs:
-  backend:
+  placeholder:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 7.0
-      - name: Build and test backend
-        run: |
-          dotnet restore
-          dotnet build --no-restore
-          dotnet test --no-build --verbosity normal || true
+      - run: echo "CI pipeline not yet configured"
 
-  web:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - name: Install and test web
-        run: |
-          cd apps/web || exit 0
-          npm ci
-          npm test --if-present || true
-          npm run build --if-present || true
-
-  mobile:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Mobile placeholder
-        run: |
-          echo "Add mobile build steps for your chosen stack (React Native / Flutter)"
+#
+# name: CI
+#
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#
+# jobs:
+#   backend:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Setup .NET
+#         uses: actions/setup-dotnet@v3
+#         with:
+#           dotnet-version: 7.0
+#       - name: Build and test backend
+#         run: |
+#           dotnet restore
+#           dotnet build --no-restore
+#           dotnet test --no-build --verbosity normal || true
+#
+#   web:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Setup Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 18
+#       - name: Install and test web
+#         run: |
+#           cd apps/web || exit 0
+#           npm ci
+#           npm test --if-present || true
+#           npm run build --if-present || true
+#
+#   mobile:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Mobile placeholder
+#         run: |
+#           echo "Add mobile build steps for your chosen stack (React Native / Flutter)"

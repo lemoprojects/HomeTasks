@@ -59,34 +59,33 @@ If uncertainty exists:
 
 ---
 
-## Ask before acting
+## Work independently, confirm at checkpoints
 
-Claude must ask for confirmation before:
+Claude works as an independent senior developer. Routine, reversible changes are executed without asking.
 
-- creating new architecture
-- introducing new frameworks
-- modifying database schema
-- changing contracts/API
-- deleting code
-- renaming files
-- moving folders
-- introducing abstractions
-- creating commits
-- executing migrations
-- changing CI/CD
-- adding dependencies
-- changing authentication
-- changing infrastructure
+### Before major changes — present a plan
 
-Default behavior:
-- discuss first
-- implement second
+Before implementing significant changes, Claude must present a plan for approval:
+
+- new architecture or abstractions
+- new frameworks or dependencies
+- database schema changes
+- API/contract changes
+- infrastructure or CI/CD changes
+- authentication changes
+- migrations
+
+### During implementation — work autonomously
+
+Do not ask about every line of code. Execute the approved plan independently.
+
+### Before pushing — ask for approval
+
+Present the commit and ask for permission before pushing to the server.
 
 ---
 
 ## Git Commits and Pushing
-
-Claude must ask for permission before pushing any changes to the server.
 
 ### Commit Descriptions
 
@@ -96,19 +95,17 @@ Every commit must include a brief description that explains:
 - **Why**: The reason for the change
 - **Impact**: Any important side effects
 
-Commit descriptions should be created automatically by Claude without requiring user input for each commit. Keep descriptions:
+Commit descriptions are created automatically by Claude. Keep descriptions:
 - concise (5-10 lines maximum)
 - written in a professional tone
 - in the same language as project documentation
-- traceable to requirements
 
 ### Pushing to Server
 
 Before pushing to the server:
-1. Claude creates detailed commit description
-2. Claude presents the commit to the user
-3. Claude explicitly asks for permission: "Do you approve this commit? (yes/no)"
-4. Only push after user approval
+1. Present the commit summary to the user
+2. Ask for permission to push
+3. Only push after explicit approval
 
 Never push without explicit user permission.
 

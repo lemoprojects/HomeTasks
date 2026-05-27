@@ -1,0 +1,1 @@
+- [Autonomy level](feedback_autonomy.md) — Work independently on routine changes, only ask for key decisions and approvals
