@@ -84,6 +84,37 @@ Default behavior:
 
 ---
 
+## Git Commits and Pushing
+
+Claude must ask for permission before pushing any changes to the server.
+
+### Commit Descriptions
+
+Every commit must include a detailed description that explains:
+
+- **What changed**: What files/components were modified
+- **Why it changed**: Business or technical reason for the change
+- **How it changed**: Brief summary of the implementation approach
+- **Impact**: Any side effects or dependencies to consider
+
+Commit descriptions should be created automatically by Claude without requiring user input for each commit. Descriptions should be:
+- clear and concise
+- written in a professional tone
+- in the same language as project documentation
+- traceable to requirements or discussions
+
+### Pushing to Server
+
+Before pushing to the server:
+1. Claude creates detailed commit description
+2. Claude presents the commit to the user
+3. Claude explicitly asks for permission: "Do you approve this commit? (yes/no)"
+4. Only push after user approval
+
+Never push without explicit user permission.
+
+---
+
 # Development Philosophy
 
 ## Prefer incremental evolution
