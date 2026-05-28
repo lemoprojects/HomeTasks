@@ -9,7 +9,8 @@ List of decisions not yet resolved. Each will be closed by a new ADR when it bec
 ### 1. Auth: in-house or external provider
 
 - **Options:** ASP.NET Core Identity (in-house) / Auth0 / Clerk / Supabase Auth
-- **Criteria:** free tier for MVP, social login integration (Google/Apple/Microsoft), ease of migration, GDPR
+- **Criteria:** free tier for MVP, social login integration (Google/Apple/Microsoft), ease of migration
+- **Note:** regulatory criteria (GDPR, data residency) are deferred on 2026-05-28 and not weighed here for now; revisit before public launch
 - **Decision expected:** before implementing the Auth module
 - **Status:** TBD — in-house ASP.NET Core Identity seems safest long-term, but requires more code
 
@@ -73,3 +74,4 @@ List of decisions not yet resolved. Each will be closed by a new ADR when it bec
 - Server-driven push → [ADR-0008](../adr/0008-server-driven-push-notifications.md)
 - Frontend hosting Cloudflare Pages → [ADR-0009](../adr/0009-frontend-hosting-cloudflare-pages.md)
 - DDD + CQRS → [ADR-0010](../adr/0010-ddd-cqrs-patterns.md)
+- Defer regulatory posture (GDPR, child-data laws) → [ADR-0011](../adr/0011-defer-regulatory-posture.md)

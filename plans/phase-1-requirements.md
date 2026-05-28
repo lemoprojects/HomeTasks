@@ -42,7 +42,7 @@ Tick the box when the file is **drafted and reviewed by the user**. A merely-sca
 - [ ] **D4.** `docs/02-requirements/user-stories.md` — User stories per persona, grouped by capability
 - [ ] **D5.** `docs/02-requirements/use-cases.md` — Detailed flows for critical paths
 - [ ] **D6.** `docs/02-requirements/permissions-matrix.md` — Roles × operations matrix
-- [ ] **D7.** `docs/02-requirements/non-functional.md` — Scale, GDPR, accessibility, language, availability, performance, security, observability
+- [ ] **D7.** `docs/02-requirements/non-functional.md` — Scale, accessibility, language, availability, performance, security, observability. **Regulatory posture (GDPR, child-data laws) is deferred** by explicit decision on 2026-05-28; D7 records only that the deferral exists and must be revisited before any public launch.
 - [ ] **D8.** `docs/02-requirements/mvp-scope.md` — MVP scope decision: which user stories / use cases are in vs. out, with rationale; exit gate for Phase 1
 
 ### Sub-checklists (granular progress)
@@ -94,7 +94,7 @@ Each use case must contain: **Trigger, Actors, Preconditions, Postconditions, Ma
 
 **D7 — Non-functional**
 - [ ] Scale assumptions (target households / users / tasks per household)
-- [ ] GDPR posture (data residency confirmed EU, retention policy, right to deletion; note: child-user data may add COPPA-like constraints — flag if Child persona is in scope)
+- [ ] Regulatory posture — **deferred** on 2026-05-28 (no GDPR / child-data law work in Phase 1). D7 only records the deferral as a known debt and a gate before public launch; no posture content authored now.
 - [ ] Language support — **TBD, candidate open decision** (Polish first vs English first; mechanism: backend-driven copy vs frontend resource files). Surface to user; if it blocks D2/D4, escalate to a new open decision in `open-decisions.md`
 - [ ] Accessibility minimum (WCAG level?)
 - [ ] Availability target (best-effort vs SLA)
@@ -136,7 +136,7 @@ Other open decisions (Auth provider #1, Cosmos API choice #2, .NET version #4, E
 
 Captured so they are not rediscovered mid-phase. Update as new ones surface.
 
-- **Child users raise consent/age constraints.** If Child Member persona stays in scope, GDPR posture in D7 may need to address parental consent and possibly aligned regulations (e.g. COPPA-like). This may also push open decision #6 toward "shared email + profiles".
+- **Child users — regulatory work deferred.** Regulatory posture (GDPR, child-data laws, parental consent) is deferred on 2026-05-28 and is **not** addressed in Phase 1. Child Member remains in MVP scope on product grounds only. This debt must be picked up before any public launch and may then push open decision #6 toward "shared email + profiles". Until then, do not let regulatory framing shape personas, user stories, or use cases.
 - **Web admin scope creep.** ADR-0003 fixes web as admin-only, but persona work in D3 will surface requests like "I want to do X from the browser". Risk: silently expanding web scope into daily-use territory. Mitigation: re-cite ADR-0003 in D3 when this comes up.
 - **MVP scope (D8) is hard to lock without UX.** Phase 2 (wireframes) may reveal that a "must-have" story is implausible for MVP. Mitigation: treat D8 as the *current* MVP scope, allow one revision after Phase 2 with explicit log entry.
 - **Glossary–user-stories cycle.** D2 depends on terms from D4, D4 depends on consistent terms from D2. Mitigation: iterate — draft D2 v1 from ADRs, refine after D4 v1.

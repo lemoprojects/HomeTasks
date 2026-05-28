@@ -16,6 +16,7 @@ Each ADR records a single significant architectural decision, its context, and i
 | [0008](0008-server-driven-push-notifications.md) | Push notifications sent from the server (Expo Push) | Accepted | 2026-05-28 |
 | [0009](0009-frontend-hosting-cloudflare-pages.md) | Frontend (web): Cloudflare Pages | Accepted | 2026-05-28 |
 | [0010](0010-ddd-cqrs-patterns.md) | Patterns: DDD + CQRS | Accepted | 2026-05-28 |
+| [0011](0011-defer-regulatory-posture.md) | Defer regulatory posture (GDPR, child-data laws) | Accepted | 2026-05-28 |
 
 ## Status — glossary
 
