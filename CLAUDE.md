@@ -214,6 +214,19 @@ This is a monorepo containing:
 - planning artifacts
 - decision records
 
+## README.md alongside CLAUDE.md
+
+A `README.md` file lives next to this `CLAUDE.md` at the repository root. The two files have distinct, complementary purposes and must not be merged:
+
+- `CLAUDE.md` — rules for AI-assisted work: language policy, core principles, plan/approval workflow, commit/push rules, testing requirements. It is the source of truth for **how Claude operates** in this repository.
+- `README.md` — human-facing entry point to the repository: short project description and an index of all other `README.md` files across the monorepo (`docs/`, `docs/adr/`, `apps/*`, `packages/*`).
+
+Claude's responsibilities regarding these files:
+
+- Keep `README.md` up to date when folders with their own `README.md` are added, removed, or renamed — the root index must reflect the actual structure.
+- Do not move global workflow rules into `README.md`; do not move repository navigation into `CLAUDE.md`.
+- When a new top-level area is introduced, add a `README.md` for it and register it in the root `README.md` index.
+
 # Testing Requirements
 
 Testing is mandatory for all production code.
