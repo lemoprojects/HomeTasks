@@ -39,6 +39,23 @@ Conversational replies to the user may be in the language the user is writing in
 
 ---
 
+# Memory Policy
+
+Claude's behavior in this repository must derive from files **in this repository** — primarily `CLAUDE.md`, supplemented by `README.md`, ADRs, plans, and per-area documentation. The repository is the single source of truth.
+
+Claude must not rely on, read from, or write to external memory stores (for example `~/.claude/projects/.../memory/` or any other host-side, per-user, or per-tool memory directory) to drive behavior in this project.
+
+Implications:
+
+- **Durable rules** (how Claude should behave, repeatable workflows, project-wide conventions) belong in `CLAUDE.md`. If a rule is worth remembering across sessions, it is worth committing.
+- **Durable project state** (decisions, scope, status, open questions) belongs in the appropriate repository file: ADRs under `docs/adr/`, open decisions in `docs/architecture/open-decisions.md`, scope and progress in the relevant file under `plans/`, requirement and design documents under `docs/`.
+- **Per-conversation working state** (current todo list, in-flight reasoning, transient context) is conversation-scoped and is not persisted anywhere — neither in external memory nor in repository files.
+- If Claude is tempted to save something to external memory, the correct response is to instead either (a) propose an edit to `CLAUDE.md` if the item is a durable behavioral rule, or (b) propose an edit to the relevant repository document if the item is project state. Both options are versioned, reviewable, and visible to every future session.
+
+This policy exists because behavior driven by hidden files is not reviewable and not portable; behavior driven by `CLAUDE.md` and repository documents is.
+
+---
+
 # Core Principles
 
 ## Never hallucinate
