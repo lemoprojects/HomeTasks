@@ -17,6 +17,28 @@ The primary goals are:
 
 ---
 
+# Language Policy
+
+Regardless of the language used in the conversation with the user, all written artifacts in this solution must be in **English**.
+
+This applies to, but is not limited to:
+
+- markdown documentation (`.md` files, including `CLAUDE.md`, `README.md`, ADRs, plans)
+- code comments and docstrings
+- identifiers (variable, function, class, file, and folder names)
+- commit messages and commit descriptions
+- pull request titles, descriptions, and review comments
+- issue titles and descriptions
+- log messages and error messages
+- configuration files and inline notes
+- test names and test descriptions
+
+The only exception is user-facing UI copy that is explicitly required to be in another language by product requirements.
+
+Conversational replies to the user may be in the language the user is writing in, but any artifact persisted to the repository must be in English.
+
+---
+
 # Core Principles
 
 ## Never hallucinate
@@ -98,7 +120,7 @@ Every commit must include a brief description that explains:
 Commit descriptions are created automatically by Claude. Keep descriptions:
 - concise (5-10 lines maximum)
 - written in a professional tone
-- in the same language as project documentation
+- in English (see [Language Policy](#language-policy))
 
 ### Pushing to Server
 
@@ -108,6 +130,40 @@ Before pushing to the server:
 3. Only push after explicit approval
 
 Never push without explicit user permission.
+
+---
+
+# Execution Plans
+
+The `plans/` folder is the working location for execution plans.
+
+## Workflow
+
+- Execution plans for upcoming work are placed in the `plans/` folder.
+- Each plan is a standalone markdown file describing the scope, steps, and acceptance criteria of a unit of work.
+- Plans are reviewed and approved before implementation begins.
+- During execution, Claude works through the plan step by step, in order.
+- Plans are kept up to date as work progresses — completed steps marked, deviations recorded, open questions surfaced.
+
+## Plan Requirements
+
+Each execution plan should contain:
+
+- a clear goal
+- explicit scope (what is in, what is out)
+- ordered, actionable steps
+- acceptance criteria / definition of done
+- known risks or open questions
+
+## Claude's Responsibilities
+
+When an execution plan exists in `plans/`:
+
+- read the relevant plan before starting work
+- follow the plan in the defined order
+- do not silently expand scope beyond the plan
+- if a step turns out to be wrong or incomplete, stop and propose an update to the plan rather than improvising
+- update the plan file to reflect progress and decisions
 
 ---
 
